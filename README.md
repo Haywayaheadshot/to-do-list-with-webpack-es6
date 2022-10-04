@@ -23,7 +23,7 @@ To get a local copy up and running follow these simple example steps.
 
 ### Live Demo
 
-To see live demo, click [here](https://haywayaheadshot.github.io/awesome-books/)
+To see live demo, click [here](https://haywayaheadshot.github.io/to-do-list-with-webpack-es6/)
 
 ### Setup
 - To clone the repository run this command - " git clone https://github.com/Haywayaheadshot/to-do-list-with-webpack-es6.git "
