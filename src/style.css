@@ -1,0 +1,118 @@
+body {
+  background-color: #fff;
+}
+
+.nav,
+.footer {
+  background-color: #000;
+  height: 2vh;
+}
+
+.nav {
+  position: fixed;
+  top: 0;
+  width: 96vw;
+}
+
+.footer {
+  position: fixed;
+  bottom: 0;
+  width: 96vw;
+}
+
+.list-form-div {
+  /* background-color: red; */
+  margin-top: 20px;
+  height: 95vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.list-form-div-child {
+  border: 1px thin #000;
+  width: 85vw;
+  box-shadow: 0 0 10px 0 #000;
+}
+
+.list-header {
+  display: flex;
+  justify-content: space-between;
+  padding: 5px 10px;
+  border-bottom: 1px solid #000;
+}
+
+.refresh-img {
+  width: 22px;
+  cursor: pointer;
+  background-color: inherit;
+}
+
+.refresh-button {
+  width: fit-content;
+  background-color: inherit;
+  border: none;
+}
+
+.form {
+  display: flex;
+  justify-content: space-between;
+  padding: 5px 10px;
+  border-bottom: 1px solid #000;
+}
+
+.task-input {
+  border: none;
+  height: 6vh;
+}
+
+.task-input::placeholder {
+  font-style: italic;
+  border: 0;
+}
+
+.task-input:enabled {
+  border: none;
+}
+
+.task-input:active {
+  border: none;
+}
+
+.task-input:focus {
+  border: none;
+}
+
+.task-input:hover {
+  border: none;
+}
+
+.enter-img {
+  width: 20px;
+  cursor: pointer;
+  background-color: inherit;
+}
+
+.enter-button {
+  width: fit-content;
+  background-color: inherit;
+  border: none;
+}
+
+.form-footer-button {
+  display: flex;
+  justify-content: center;
+  width: inherit;
+  align-items: center;
+  height: 7vh;
+  border-radius: 0;
+  border: none;
+}
+
+.to-do-list-ul {
+  margin: 0;
+  list-style: none;
+
+  /* display: none; */
+}
