@@ -1,3 +1,10 @@
+@font-face {
+  font-family: 'Exo 2', sans-serif, !important;
+  src: url(./font/my-font.woff2) format("woff2"), url(./font/my-font.woff) format("woff");
+  font-weight: 900;
+  font-style: normal;
+}
+
 body {
   background-color: #fff;
 }
@@ -65,6 +72,7 @@ body {
 .task-input {
   border: none;
   height: 6vh;
+  width: 80%;
 }
 
 .task-input::placeholder {
@@ -100,7 +108,7 @@ body {
   border: none;
 }
 
-.form-footer-button {
+.clear-completed {
   display: flex;
   justify-content: center;
   width: inherit;
@@ -115,4 +123,44 @@ body {
   list-style: none;
 
   /* display: none; */
+}
+
+.completed {
+  text-decoration: line-through;
+}
+
+.to-do-list-item {
+  display: flex;
+  justify-content: space-between;
+}
+
+.edit-image,
+.delete-image {
+  width: 20px;
+  cursor: pointer;
+  background-color: inherit;
+}
+
+.edit-button,
+.delete-button {
+  border: 0;
+  border-radius: 0;
+  background-color: inherit;
+  padding: 5px 0;
+}
+
+.footer-buttons {
+  display: none;
+}
+
+.edit-input {
+  padding: 0;
+}
+
+#task-edit-error {
+  background-color: red;
+  color: #fff;
+  padding: 0 19px;
+  font-size: 25px;
+  display: none;
 }
