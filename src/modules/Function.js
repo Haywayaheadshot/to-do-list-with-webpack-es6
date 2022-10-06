@@ -38,4 +38,53 @@ const createTaskDynamically = () => {
   localStorage.getItem('tasks');
 };
 
-export default createTaskDynamically;
+const displayTasks = () => {
+  const tasks = JSON.parse(localStorage.getItem('tasks'));
+  if (tasks !== null) {
+    tasks.forEach((task) => {
+      const li = document.createElement('li');
+      li.classList.add('to-do-list-item');
+      toDoList.appendChild(li);
+      const checkBox = document.createElement('input');
+      checkBox.setAttribute('type', 'checkbox');
+      checkBox.setAttribute('class', 'checkbox');
+      checkBox.setAttribute('id', `checkbox-${task.index}`);
+      checkBox.setAttribute('value', `${task.completed ? 'checked' : ''}`);
+      // checkBox.setAttribute('unchecked', `${task.completed ? 'checked' : ''}`);
+      if (task.completed) {
+        checkBox.setAttribute('checked', 'checked');
+        checkBox.classList.add('completed');
+      } else {
+        checkBox.setAttribute('unchecked', 'unchecked');
+      }
+      li.appendChild(checkBox);
+      const checkBoxLabel = document.createElement('label');
+      checkBoxLabel.setAttribute('for', `checkbox-${task.index}`);
+      checkBoxLabel.setAttribute('class', 'checkbox-label');
+      checkBoxLabel.innerHTML = task.description;
+      li.appendChild(checkBoxLabel);
+      const editButton = document.createElement('button');
+      editButton.setAttribute('class', 'edit-button');
+      editButton.setAttribute('type', 'button');
+      editButton.innerHTML = `<img class="edit-image" src='${editImage}' alt="Edit Button">`;
+      li.appendChild(editButton);
+      const deleteButton = document.createElement('button');
+      deleteButton.setAttribute('class', 'delete-button');
+      deleteButton.setAttribute('type', 'button');
+      deleteButton.innerHTML = `<img class="delete-image" src='${deleteImage}' alt="Delete Button">`;
+      li.appendChild(deleteButton);
+    });
+  }
+};
+
+const deleteItem = (event) => {
+  event.target.parentElement.parentElement.remove();
+  // remove task from local storage
+  const taskIndex = event.target.parentElement.parentElement.children[0].id;
+  const taskIndexNumber = taskIndex.split('-')[1];
+  const tasks = JSON.parse(localStorage.getItem('tasks'));
+  tasks.splice(taskIndexNumber - 1, 1);
+  localStorage.setItem('tasks', JSON.stringify(tasks));
+};
+
+export { displayTasks, createTaskDynamically, deleteItem };
