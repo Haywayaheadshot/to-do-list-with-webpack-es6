@@ -118,8 +118,6 @@ body {
   width: inherit;
   align-items: center;
   height: 7vh;
-  border-radius: 0;
-  border: none;
   font-family: 'Exo 2', sans-serif;
   font-size: 1.2rem;
   border: 3px solid #000;
@@ -129,6 +127,7 @@ body {
 .to-do-list-ul {
   margin: 0;
   list-style: none;
+
   /* display: none; */
 }
 
@@ -221,7 +220,6 @@ body {
   }
 
   .footer-buttons {
-    display: flex;
     justify-content: space-between;
     align-items: center;
     padding: 0 20px;
