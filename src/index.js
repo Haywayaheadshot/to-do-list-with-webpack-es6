@@ -72,10 +72,17 @@ toDoList.addEventListener('click', (event) => {
         <input type="text" class="edit-input" value="${editTaskText}" >
         `;
     const editInput = editTask.querySelector('.edit-input');
-    editInput.addEventListener('keydown', (event) => {
+    // editInput.value = '';
+    editInput.addEventListener('keypress', (event) => {
       if ((event.key === 'Enter') && (editInput.value !== '')) {
+        const editInput = editTask.querySelector('.edit-input');
         event.preventDefault();
-        editTask.innerHTML = editInput.value;
+        // update local storage
+        const taskIndex = event.target.parentElement.parentElement.children[0].id;
+        const taskIndexNumber = taskIndex.split('-')[1];
+        const tasks = JSON.parse(localStorage.getItem('tasks'));
+        tasks[taskIndexNumber - 1].description = editInput.value;
+        localStorage.setItem('tasks', JSON.stringify(tasks));
       } else if ((event.key === 'Enter') && (editInput.value === '')) {
         // show error message
         errorMessage.style.display = 'block';
