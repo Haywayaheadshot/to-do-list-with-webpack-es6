@@ -12,6 +12,11 @@
     </header>
     <main>
         <section class="list-form-div">
+            <section class="error-messages">
+                <p id="task-edit-error">
+                    Please enter a valid task
+                </p>
+            </section>
             <div class="list-form-div-child">
                 <section class="list-header">
                     <h1>Today's To-Do</h1>
@@ -19,13 +24,19 @@
                     </button>
                 </section>
                 <form class="form">
-                    <input type="text" class="task-input" name="task" placeholder="Add to your list..." required>
+                    <input type="text" class="task-input font" name="task" placeholder="Add to your list..." required>
                     <button type="submit" class="enter-button">
                     </button>
                 </form>
                 <ul class="to-do-list-ul">
                 </ul>
-                <button type="button" class="form-footer-button">Clear all completed</button>
+                <button type="button" class="clear-completed">Clear all completed</button>
+                <section class="footer-buttons">
+                    <button type="button" class="form-footer-button">All Activities</button>
+                    <button type="button" class="form-footer-button">Active</button>
+                    <button type="button" class="form-footer-button">Completed</button>
+                    <button type="button" class="form-footer-button">Delete All Activities</button>
+            </section>
             </div>
 
         </section>
