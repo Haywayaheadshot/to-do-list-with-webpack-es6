@@ -120,12 +120,15 @@ body {
   height: 7vh;
   border-radius: 0;
   border: none;
+  font-family: 'Exo 2', sans-serif;
+  font-size: 1.2rem;
+  border: 3px solid #000;
+  border-radius: 5px;
 }
 
 .to-do-list-ul {
   margin: 0;
   list-style: none;
-
   /* display: none; */
 }
 
@@ -168,4 +171,64 @@ body {
   font-size: 25px;
   display: none;
   font-family: 'Exo 2', sans-serif;
+}
+
+@media screen and (min-width: 768px) {
+  .nav,
+  .footer {
+    height: 5vh;
+  }
+
+  .list-form-div {
+    margin-top: 5vh;
+    height: 90vh;
+  }
+
+  .list-form-div-child {
+    width: 50vw;
+  }
+
+  .list-header {
+    padding: 5px 20px;
+  }
+
+  .form {
+    padding: 5px 20px;
+  }
+
+  .task-input {
+    height: 5vh;
+    width: 70%;
+  }
+
+  .enter-img {
+    width: 25px;
+  }
+
+  .clear-completed {
+    height: 5vh;
+    font-size: 1.5rem;
+  }
+
+  .edit-image,
+  .delete-image {
+    width: 25px;
+  }
+
+  .edit-button,
+  .delete-button {
+    padding: 5px 5px;
+  }
+
+  .footer-buttons {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 20px;
+    display: none;
+  }
+
+  .footer-buttons p {
+    font-family: 'Exo 2', sans-serif;
+  }
 }
