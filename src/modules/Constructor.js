@@ -1,5 +1,5 @@
 class Task {
-  constructor(index, description, completed) {
+  constructor(index, description, completed = null) {
     this.index = index;
     this.description = description;
     this.completed = completed;
@@ -18,6 +18,13 @@ class Task {
 
     return null;
   };
+
+  updateTask = (index, description, completed) => {
+    const task = this.listArray.find((task) => task.index === index);
+    task.description = description;
+    task.completed = completed;
+    localStorage.setItem('tasks', JSON.stringify(this.listArray));
+  }
 }
 
 export default Task;
