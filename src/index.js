@@ -73,7 +73,7 @@ toDoList.addEventListener('click', (event) => {
         `;
     const editInput = editTask.querySelector('.edit-input');
     // editInput.value = '';
-    editInput.addEventListener('keypress', (event) => {
+    editInput.addEventListener('keydown', (event) => {
       if ((event.key === 'Enter') && (editInput.value !== '')) {
         const editInput = editTask.querySelector('.edit-input');
         event.preventDefault();
@@ -83,6 +83,7 @@ toDoList.addEventListener('click', (event) => {
         const tasks = JSON.parse(localStorage.getItem('tasks'));
         tasks[taskIndexNumber - 1].description = editInput.value;
         localStorage.setItem('tasks', JSON.stringify(tasks));
+        editTask.innerHTML = editInput.value;
       } else if ((event.key === 'Enter') && (editInput.value === '')) {
         // show error message
         errorMessage.style.display = 'block';
