@@ -15,6 +15,7 @@ import {
 import { createTaskDynamically, displayTasks, deleteItem } from './modules/Function.js';
 
 refreshButton.src = refreshImage;
+refreshButton.alt = 'Refresh Button';
 refreshButton.classList.add('refresh-img');
 // Append refresh button to the DOM
 refresh.appendChild(refreshButton);
@@ -50,10 +51,11 @@ window.addEventListener('load', () => {
 // event listener for clear completed button
 clearCompletedButton.addEventListener('click', (event) => {
   event.preventDefault();
-  const completedTasks = document.querySelectorAll('.completed');
-  completedTasks.forEach((task) => {
-    task.parentElement.remove();
-  });
+  // array.filter() method
+  const tasks = JSON.parse(localStorage.getItem('tasks'));
+  const filteredTasks = tasks.filter((task) => task.completed === false);
+  localStorage.setItem('tasks', JSON.stringify(filteredTasks));
+  window.location.reload();
 });
 
 // event listener for delete button
