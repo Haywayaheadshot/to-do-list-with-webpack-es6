@@ -12,9 +12,10 @@ import {
 } from './modules/Variables.js';
 
 // import createTaskDynamically from Function.js
-import createTaskDynamically from './modules/Function.js';
+import { createTaskDynamically, displayTasks, deleteItem } from './modules/Function.js';
 
 refreshButton.src = refreshImage;
+refreshButton.alt = 'Refresh Button';
 refreshButton.classList.add('refresh-img');
 // Append refresh button to the DOM
 refresh.appendChild(refreshButton);
@@ -28,6 +29,7 @@ submit.addEventListener('click', (event) => {
   event.preventDefault();
   if ((input.value !== '') || (event.key === 'Enter')) {
     createTaskDynamically();
+    toDoList.style.display = 'block';
   } else if (input.value === '') {
     errorMessage.style.display = 'block';
     setTimeout(() => {
@@ -40,29 +42,26 @@ submit.addEventListener('click', (event) => {
 refresh.addEventListener('click', (event) => {
   event.preventDefault();
   window.location.reload();
-  toDoList.style.display = 'block';
+});
+
+window.addEventListener('load', () => {
+  displayTasks();
 });
 
 // event listener for clear completed button
 clearCompletedButton.addEventListener('click', (event) => {
   event.preventDefault();
-  const completedTasks = document.querySelectorAll('.completed');
-  completedTasks.forEach((task) => {
-    task.remove();
-  });
+  // array.filter() method
+  const tasks = JSON.parse(localStorage.getItem('tasks'));
+  const filteredTasks = tasks.filter((task) => task.completed === false);
+  localStorage.setItem('tasks', JSON.stringify(filteredTasks));
+  window.location.reload();
 });
 
 // event listener for delete button
 toDoList.addEventListener('click', (event) => {
   if (event.target.className === 'delete-image') {
-    // remove task from the DOM
-    event.target.parentElement.parentElement.remove();
-    // remove task from local storage
-    const taskIndex = event.target.parentElement.parentElement.children[0].id;
-    const taskIndexNumber = taskIndex.split('-')[1];
-    const tasks = JSON.parse(localStorage.getItem('tasks'));
-    tasks.splice(taskIndexNumber - 1, 1);
-    localStorage.setItem('tasks', JSON.stringify(tasks));
+    deleteItem(event);
   }
   if (event.target.className === 'edit-image') {
     const editButton = event.target.parentElement;
@@ -93,12 +92,27 @@ toDoList.addEventListener('click', (event) => {
       }
     });
   }
+});
+
+//  eventlistener for checkbox to mark task as completed and update local storage
+toDoList.addEventListener('change', (event) => {
   if (event.target.type === 'checkbox') {
-    // mark task as completed
     if (event.target.checked) {
       event.target.parentElement.classList.add('completed');
+      // update local storage
+      const taskIndex = event.target.id;
+      const taskIndexNumber = taskIndex.split('-')[1];
+      const tasks = JSON.parse(localStorage.getItem('tasks'));
+      tasks[taskIndexNumber - 1].completed = true;
+      localStorage.setItem('tasks', JSON.stringify(tasks));
     } else {
       event.target.parentElement.classList.remove('completed');
+      // update local storage
+      const taskIndex = event.target.id;
+      const taskIndexNumber = taskIndex.split('-')[1];
+      const tasks = JSON.parse(localStorage.getItem('tasks'));
+      tasks[taskIndexNumber - 1].completed = false;
+      localStorage.setItem('tasks', JSON.stringify(tasks));
     }
   }
 });
