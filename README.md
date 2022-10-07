@@ -28,9 +28,9 @@ To see live demo, click [here](https://haywayaheadshot.github.io/to-do-list-with
 ### Setup
 - To clone the repository run this command - " git clone https://github.com/Haywayaheadshot/to-do-list-with-webpack-es6.git "
 
-## Authors
+## Author
 
-👤 **Author1**
+👤 **Abubakar Ummar**
 
 - GitHub: [@Haywayaheadshot](https://github.com/Haywayaheadshot)
 - Twitter: [@haywayalive](https://twitter.com/haywayalive)
