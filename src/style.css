@@ -8,7 +8,7 @@
 }
 
 body {
-  background-color: #fff;
+  background-color: #FBBD5E;
 }
 
 .nav,
@@ -30,7 +30,6 @@ body {
 }
 
 .list-form-div {
-  /* background-color: red; */
   margin-top: 20px;
   height: 95vh;
   display: flex;
@@ -42,7 +41,9 @@ body {
 .list-form-div-child {
   border: 1px thin #000;
   width: 85vw;
-  box-shadow: 0 0 10px 0 #000;
+  box-shadow: 0 0 20px 0 #fff;
+  background-color: #2EA0DA;
+  border-radius: 10px;
 }
 
 .list-header {
@@ -51,12 +52,30 @@ body {
   padding: 5px 10px;
   border-bottom: 1px solid #000;
   font-family: 'Exo 2', sans-serif;
+  background-color: #183651;
+  color: #F06151;
+  border-radius: 10px;
+}
+
+.list-header h1 {
+  font-size: 1.8rem;
+  font-weight: 900;
+  /* color: #183651; */
 }
 
 .refresh-img {
   width: 22px;
   cursor: pointer;
   background-color: inherit;
+}
+
+@keyframes rotate {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
 }
 
 .refresh-button {
@@ -77,6 +96,8 @@ body {
   height: 6vh;
   width: 80%;
   font-family: 'Exo 2', sans-serif;
+  background-color: #FBBD5E;
+  color: #183651;
 }
 
 .task-input::placeholder {
@@ -122,6 +143,8 @@ body {
   font-size: 1.2rem;
   border: 3px solid #000;
   border-radius: 5px;
+  color: #F06151;
+  background-color: #183651;
 }
 
 .to-do-list-ul {
@@ -138,6 +161,7 @@ body {
 .to-do-list-item {
   display: flex;
   justify-content: space-between;
+  border-bottom: 1px solid #000;
 }
 
 .edit-image,
@@ -176,6 +200,7 @@ body {
   .nav,
   .footer {
     height: 5vh;
+    width: 99%;
   }
 
   .list-form-div {
@@ -184,7 +209,7 @@ body {
   }
 
   .list-form-div-child {
-    width: 50vw;
+    width: 40vw;
   }
 
   .list-header {
@@ -228,5 +253,23 @@ body {
 
   .footer-buttons p {
     font-family: 'Exo 2', sans-serif;
+  }
+
+  .refresh-img:hover {
+    /* transform: scale(1.5) rotate(700deg); */
+    -moz-animation: rotate 2s ease-out 0.05ms 1 normal ;
+    -webkit-animation: rotate 2s ease-out 0.05ms 1 normal ;
+    -o-animation:rotate 2s ease-out 0.05ms 1 normal ;
+  }
+
+  .clear-completed:hover {
+    box-shadow: 0 0 20px 0 #fff;
+    border: 3px solid #F06151;
+  }
+
+  .clear-completed:active {
+    box-shadow: 0 0 20px 0 #FBBD5E;
+    border: 3px solid #2EA0DA;
+    color: #000;
   }
 }
