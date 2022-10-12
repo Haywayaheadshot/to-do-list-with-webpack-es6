@@ -3,23 +3,23 @@ class Task {
     this.index = index;
     this.description = description;
     this.completed = completed;
-    this.listArray = JSON.parse(localStorage.getItem('books')) || [];
+    // this.listArray = JSON.parse(localStorage.getItem('books')) || [];
   }
 
-  addNewTask = (index = null, description = null, completed = null) => {
+  static addNewTask = (index = null, description = null, completed = null) => {
     if (description) {
       const newTaskIndex = index || this.listArray.length + 1;
       const isNewTaskCompleted = completed || false;
       const newTask = new Task(newTaskIndex, description, isNewTaskCompleted);
-      this.listArray.push(newTask);
-      localStorage.setItem('tasks', JSON.stringify(this.listArray));
+      // this.listArray.push(newTask);
+      // localStorage.setItem('tasks', JSON.stringify(this.listArray));
       return newTask;
     }
 
     return null;
   };
 
-  updateTask = (index, description, completed) => {
+  static updateTask = (index, description, completed) => {
     const task = this.listArray.find((task) => task.index === index);
     task.description = description;
     task.completed = completed;
@@ -28,3 +28,5 @@ class Task {
 }
 
 export default Task;
+
+// module.exports = Task;
