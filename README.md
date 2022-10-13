@@ -28,6 +28,10 @@ To see live demo, click [here](https://haywayaheadshot.github.io/to-do-list-with
 ### Setup
 - To clone the repository run this command - " git clone https://github.com/Haywayaheadshot/to-do-list-with-webpack-es6.git "
 
+### To run test. In the command line, type.
+- npm install jest
+- npm test
+
 ## Author
 
 👤 **Abubakar Ummar**
