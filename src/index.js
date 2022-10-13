@@ -8,11 +8,11 @@ import enterImage from './images/icons/enter.png';
 import {
   refresh, submit,
   enterButton, refreshButton, toDoList,
-  clearCompletedButton, input, errorMessage,
+  clearCompletedButton, input, errorMessage, newTask,
 } from './modules/Variables.js';
 
 // import createTaskDynamically from Function.js
-import { createTaskDynamically, displayTasks, deleteItem } from './modules/Function.js';
+import { createTaskDynamically, displayTasks } from './modules/Function.js';
 
 refreshButton.src = refreshImage;
 refreshButton.alt = 'Refresh Button';
@@ -61,7 +61,7 @@ clearCompletedButton.addEventListener('click', (event) => {
 // event listener for delete button
 toDoList.addEventListener('click', (event) => {
   if (event.target.className === 'delete-image') {
-    deleteItem(event);
+    newTask.deleteItem(event);
   }
   if (event.target.className === 'edit-image') {
     const editButton = event.target.parentElement;
