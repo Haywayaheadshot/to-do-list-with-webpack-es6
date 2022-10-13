@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 //import createTaskDynamically from '../Function.js';
 import Task from '../Constructor.js';
 import { newTask } from '../Variables.js';
@@ -23,4 +24,20 @@ describe('Add testing', () => {
     expect(newTask.listArray.length).toBe(4);
   }); 
 
+=======
+import { deleteItem } from '../Function.js';
+
+describe('deleteItem', () => {
+  test('should delete a task', () => {
+    const tasks = [
+      {
+        index: 1,
+        description: 'test',
+        completed: false,
+      },
+    ];
+    const newTasks = deleteItem(tasks, 1);
+    expect(newTasks).toEqual([]);
+  });
+>>>>>>> 7ee0e52a88685a80120bda388958d8eee16094a2
 });

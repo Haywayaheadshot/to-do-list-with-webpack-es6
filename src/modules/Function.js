@@ -79,12 +79,13 @@ const displayTasks = () => {
 
 const deleteItem = (event) => {
   event.target.parentElement.parentElement.remove();
+
   // remove task from local storage
-  const taskIndex = event.target.parentElement.parentElement.children[0].id;
-  const taskIndexNumber = taskIndex.split('-')[1];
-  const tasks = JSON.parse(localStorage.getItem('tasks'));
-  tasks.splice(taskIndexNumber - 1, 1);
-  localStorage.setItem('tasks', JSON.stringify(tasks));
+  // const taskIndex = event.target.parentElement.parentElement.children[0].id;
+  // const taskIndexNumber = taskIndex.split('-')[1];
+  // const tasks = JSON.parse(localStorage.getItem('tasks'));
+  // tasks.splice(taskIndexNumber - 1, 1);
+  // localStorage.setItem('tasks', JSON.stringify(tasks));
 };
 
 export { displayTasks, createTaskDynamically, deleteItem };
