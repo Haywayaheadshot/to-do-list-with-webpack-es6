@@ -35,7 +35,7 @@ const createTaskDynamically = () => {
   li.appendChild(deleteButton);
   input.value = '';
   // get the list from local storage
-  localStorage.getItem('tasks');
+  localStorage.getItem('tasks'); // ???
 };
 
 const displayTasks = () => {
