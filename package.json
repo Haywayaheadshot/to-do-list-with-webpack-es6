@@ -12,7 +12,11 @@
     "type": "git",
     "url": "git+https://github.com/Haywayaheadshot/to-do-list-with-webpack-es6.git"
   },
-  "keywords": ["To-do List","App","Organize Tasks"],
+  "keywords": [
+    "To-do List",
+    "App",
+    "Organize Tasks"
+  ],
   "author": "Abubakar Ummar <haywayaheadshotstrategy.fx@gmail.com>",
   "license": "ISC",
   "bugs": {
