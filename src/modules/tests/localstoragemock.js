@@ -1,9 +1,9 @@
 class localStorageMock {
-  constructor(){
+  constructor() {
     this.lStoreObj = {};
   }
 
-  setItem (key, value) {
+  setItem(key, value) {
     this.lStoreObj[key] = value;
   }
 
@@ -19,12 +19,9 @@ class localStorageMock {
     this.lStoreObj[key] = '';
   }
 
-  getItem() {
+  getWholeItem() {
     return this.lStoreObj;
   }
-
-}
-
-localStorage = new localStorageMock; // We can create this object from where we import.
+} // We can create this object from where we import.
 
 export default localStorageMock;
