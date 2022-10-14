@@ -3,7 +3,7 @@ class Task {
     this.index = index;
     this.description = description;
     this.completed = completed;
-    this.listArray = JSON.parse(localStorage.getItem('books')) || [];
+    // this.listArray = JSON.parse(localStorage.getItem('books')) || [];
   }
 
   static addNewTask = (index = null, description = null, completed = null) => {
@@ -11,8 +11,8 @@ class Task {
       const newTaskIndex = index || this.listArray.length + 1;
       const isNewTaskCompleted = completed || false;
       const newTask = new Task(newTaskIndex, description, isNewTaskCompleted);
-      this.listArray.push(newTask);
-      localStorage.setItem('tasks', JSON.stringify(this.listArray));
+      // this.listArray.push(newTask);
+      // localStorage.setItem('tasks', JSON.stringify(this.listArray));
       return newTask;
     }
 
