@@ -1,22 +1,18 @@
-class Task {
-  constructor(index, description, completed = null) {
+export default class Task {
+  constructor(index, description, completed = false) {
     this.index = index;
     this.description = description;
     this.completed = completed;
-    this.listArray = JSON.parse(localStorage.getItem('books')) || [];
   }
 
-  addNewTask = (index = null, description = null, completed = null) => {
-    if (description) {
-      const newTaskIndex = index || this.listArray.length + 1;
-      const isNewTaskCompleted = completed || false;
-      const newTask = new Task(newTaskIndex, description, isNewTaskCompleted);
-      this.listArray.push(newTask);
-      localStorage.setItem('tasks', JSON.stringify(this.listArray));
-      return newTask;
+  addNewTask = () => {
+    let dataStored = [];
+    let todos = [];
+    if (localStorage.getItem('tasks')) {
+      dataStored = localStorage.getItem('tasks');
+      todos = JSON.parse(dataStored);
     }
-
-    return null;
+    localStorage.setItem('tasks', JSON.stringify(this.listArray));
   };
 
   updateTask = (index, description, completed) => {
@@ -24,7 +20,5 @@ class Task {
     task.description = description;
     task.completed = completed;
     localStorage.setItem('tasks', JSON.stringify(this.listArray));
-  }
+  };
 }
-
-export default Task;

@@ -15,5 +15,3 @@ export const clearCompletedButton = document.querySelector('.clear-completed');
 
 // Declare input
 export const input = document.querySelector('.task-input');
-
-export const newTask = new Task();
