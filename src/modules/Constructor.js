@@ -37,6 +37,12 @@ class Task {
     // tasks.splice(taskIndexNumber - 1, 1);
     // localStorage.setItem('tasks', JSON.stringify(tasks));
   };
+
+  static clearCompletedTasks = () => {
+    const tasks = JSON.parse(localStorage.getItem('tasks'));
+    const filteredTasks = tasks.filter((task) => task.completed === false);
+    localStorage.setItem('tasks', JSON.stringify(filteredTasks));
+  };
 }
 
 export default Task;
